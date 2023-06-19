@@ -1,0 +1,27 @@
+﻿@model List<Ofline_Health.Models.Patient>
+
+<h1>Patients with the same problem as the doctor's specialty</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Problem</th>
+            <th>Action</th>
+            <th>Add Prescription</th>
+        </tr>
+    </thead>
+
+    @foreach (var patient in Model)
+    {
+        <tr>
+            <td>@patient.Patient_Name</td>
+            <td>@patient.Email</td>
+            <td>@patient.Problem</td>
+            <td><a href="@Url.Action("PatientDetails", new { id = patient.PatientId })">View Details</a></td>
+            <td><a href="@Url.Action("CreatePrescription", new { id = patient.PatientId })">Add Prescription</a></td>
+        </tr>
+    }
+</table>
+\

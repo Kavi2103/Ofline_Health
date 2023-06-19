@@ -1,0 +1,100 @@
+﻿@model Ofline_Health.Models.Patient
+
+@{
+    ViewData["Title"] = "PatientDetails";
+}
+
+<style>
+    .patient-details {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 10px #ccc;
+    }
+
+        .patient-details h4 {
+            margin-bottom: 10px;
+        }
+
+        .patient-details dl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .patient-details dt, .patient-details dd {
+            flex-basis: 45%;
+            padding: 10px;
+        }
+
+        .patient-details dt {
+            font-weight: bold;
+        }
+
+        .patient-details dd {
+            font-style: italic;
+        }
+</style>
+<div class="patient-details">
+    <h4>Patient</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Patient_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Patient_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Problem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Problem)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Emergency_Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Emergency_Phone)
+        </dd>
+    </dl>
+
+    <a href="@Url.Action("AddPrescription", new { id = Model.PatientId })" class="btn btn-primary">Add Prescription</a>
+</div>
